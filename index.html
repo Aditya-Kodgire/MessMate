@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MessMate</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
+
+    <div id="home-page">
+
+        <header class="header">
+
+            <div class="top-bar">
+
+                <div class="logo">
+                    MessMate<span>•</span>
+                </div>
+
+                <button class="cart-icon" onclick="showCart()">
+                    🛒
+                    <span id="cart-count">0</span>
+                </button>
+
+            </div>
+
+            <div class="greeting">
+
+                <p class="hello-text">GOOD MORNING</p>
+
+                <h1>Hey, Aditya 👋</h1>
+
+                <p>
+                    Find affordable meals near you.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <div class="search-container">
+
+            <div class="search-box-wrapper">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    placeholder="Search messes, meals..."
+                    id="searchInput">
+
+            </div>
+
+        </div>
+
+
+        <div class="location">
+            ⌖ Near MIT-WPU, Kothrud
+        </div>
+
+
+        <!-- FLEXI WALLET SHORTCUT -->
+
+        <div class="wallet-mini" onclick="showFlexiWallet()">
+
+            <div class="wallet-mini-icon">
+                💳
+            </div>
+
+            <div>
+
+                <span>FLEXI WALLET</span>
+
+                <strong>
+                    ₹<b id="homeWalletBalance">0</b>
+                </strong>
+
+                <p>
+                    Choose a different mess every day →
+                </p>
+
+            </div>
+
+            <b class="wallet-arrow">→</b>
+
+        </div>
+
+
+        <!-- FEATURED -->
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="section-label">
+                    DISCOVER
+                </p>
+
+                <h2>
+                    Nearby messes
+                </h2>
+
+            </div>
+
+            <span class="see-all">
+                See all →
+            </span>
+
+        </div>
+
+
+        <!-- MESS 1 -->
+
+        <div class="mess-card">
+
+            <div class="mess-cover">
+
+                <div class="food-illustration">
+                    🍛
+                </div>
+
+                <div class="verified">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+            <div class="mess-card-content">
+
+                <div class="mess-title-row">
+
+                    <div>
+
+                        <h3>
+                            Maa's Kitchen
+                        </h3>
+
+                        <p>
+                            Home-style • Vegetarian
+                        </p>
+
+                    </div>
+
+                    <div class="rating">
+                        ★ 4.6
+                    </div>
+
+                </div>
+
+
+                <div class="mess-meta">
+
+                    <span>⌖ 0.8 km</span>
+
+                    <span>•</span>
+
+                    <span>₹2,500/month</span>
+
+                </div>
+
+
+                <div class="card-buttons">
+
+                    <button
+                        class="details-button"
+                        onclick="showDetails()">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="order-button"
+                        onclick="showMeals()">
+
+                        🍱 Order Meal
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MESS 2 -->
+
+        <div class="mess-card">
+
+            <div class="mess-cover second">
+
+                <div class="food-illustration">
+                    🥘
+                </div>
+
+                <div class="verified">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+            <div class="mess-card-content">
+
+                <div class="mess-title-row">
+
+                    <div>
+
+                        <h3>
+                            Student Rasoi
+                        </h3>
+
+                        <p>
+                            North Indian • Veg
+                        </p>
+
+                    </div>
+
+                    <div class="rating">
+                        ★ 4.3
+                    </div>
+
+                </div>
+
+
+                <div class="mess-meta">
+
+                    <span>⌖ 1.2 km</span>
+
+                    <span>•</span>
+
+                    <span>₹2,200/month</span>
+
+                </div>
+
+
+                <div class="card-buttons">
+
+                    <button
+                        class="details-button"
+                        onclick="showDetails()">
+
+                        View Details
+
+                    </button>
+
+                    <button
+                        class="order-button"
+                        onclick="showMeals()">
+
+                        🍱 Order Meal
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FLEXIBLE SUBSCRIPTION -->
+
+        <div class="flex-banner">
+
+            <div>
+
+                <p class="section-label">
+                    NEW
+                </p>
+
+                <h2>
+                    Don't commit to one mess.
+                </h2>
+
+                <p>
+                    Add money to your Flexi Wallet and
+                    choose where you eat every day.
+                </p>
+
+                <button onclick="showFlexiWallet()">
+                    Explore Flexi Wallet →
+                </button>
+
+            </div>
+
+            <div class="flex-banner-icon">
+                🔄
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DETAILS
+    ====================================================== -->
+
+    <div id="details-page" class="page" style="display:none;">
+
+        <div class="details-top">
+
+            <button
+                class="back-button"
+                onclick="goHome()">
+
+                ← Back
+
+            </button>
+
+
+            <div class="details-hero">
+
+                <div class="large-food-icon">
+                    🍛
+                </div>
+
+                <div>
+
+                    <p class="verified-small">
+                        ✓ VERIFIED MESS
+                    </p>
+
+                    <h1>
+                        Maa's Kitchen
+                    </h1>
+
+                    <p>
+                        Home-style • Vegetarian
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="details-location">
+                ⌖ 0.8 km from MIT-WPU • Kothrud
+            </div>
+
+        </div>
+
+
+        <div class="stats-row">
+
+            <div class="stat">
+                <strong>4.6 ★</strong>
+                <span>Rating</span>
+            </div>
+
+            <div class="stat">
+                <strong>3 / day</strong>
+                <span>Meals</span>
+            </div>
+
+            <div class="stat">
+                <strong>4.8</strong>
+                <span>Hygiene</span>
+            </div>
+
+        </div>
+
+
+        <div class="details-plan">
+
+            <div>
+
+                <p class="section-label">
+                    MONTHLY PLAN
+                </p>
+
+                <h2>
+                    ₹2,500
+                    <span>/ month</span>
+                </h2>
+
+                <p>
+                    Breakfast + Lunch + Dinner
+                </p>
+
+            </div>
+
+            <button onclick="showSubscription()">
+                Subscribe
+            </button>
+
+        </div>
+
+
+        <div class="details-section">
+
+            <div class="section-header inner">
+
+                <div>
+
+                    <p class="section-label">
+                        TODAY
+                    </p>
+
+                    <h2>
+                        Today's Menu
+                    </h2>
+
+                </div>
+
+                <span class="menu-date">
+                    08 AUG
+                </span>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <div class="menu-icon breakfast">
+                    ☀️
+                </div>
+
+                <div class="menu-info">
+
+                    <span class="meal-time">
+                        BREAKFAST
+                    </span>
+
+                    <h3>
+                        Poha & Tea
+                    </h3>
+
+                    <p>
+                        Fresh poha with peanuts and hot chai
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    ₹60
+                </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <div class="menu-icon lunch">
+                    🍱
+                </div>
+
+                <div class="menu-info">
+
+                    <span class="meal-time">
+                        LUNCH
+                    </span>
+
+                    <h3>
+                        Dal, Rice & Roti
+                    </h3>
+
+                    <p>
+                        Dal tadka, rice, roti and seasonal sabzi
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    ₹90
+                </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+                <div class="menu-icon dinner">
+                    🌙
+                </div>
+
+                <div class="menu-info">
+
+                    <span class="meal-time">
+                        DINNER
+                    </span>
+
+                    <h3>
+                        Paneer Masala
+                    </h3>
+
+                    <p>
+                        Paneer gravy, roti, rice and salad
+                    </p>
+
+                </div>
+
+                <div class="menu-price">
+                    ₹100
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="quick-actions">
+
+            <button onclick="showMeals()">
+
+                <span>🍱</span>
+
+                <div>
+
+                    <strong>
+                        Individual Meal
+                    </strong>
+
+                    <small>
+                        Order for today
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </button>
+
+
+            <button onclick="showSubscription()">
+
+                <span>📋</span>
+
+                <div>
+
+                    <strong>
+                        Monthly Plan
+                    </strong>
+
+                    <small>
+                        Save with subscription
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </button>
+
+        </div>
+
+
+        <div class="details-section">
+
+            <div class="section-header inner">
+
+                <div>
+
+                    <p class="section-label">
+                        REVIEWS
+                    </p>
+
+                    <h2>
+                        What students say
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>
+                        Rahul M.
+                    </strong>
+
+                    <span>
+                        ★★★★★
+                    </span>
+
+                </div>
+
+                <p>
+                    "Good taste, clean place and the portions
+                    are actually worth the price."
+                </p>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>
+                        Ananya P.
+                    </strong>
+
+                    <span>
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <p>
+                    "Really convenient for students.
+                    Food feels homemade."
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MEALS
+    ====================================================== -->
+
+    <div id="meals-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="showDetails()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                MAAS KITCHEN
+            </p>
+
+            <h1>
+                Order a meal
+            </h1>
+
+            <p>
+                No subscription? No problem.
+                Just order what you need.
+            </p>
+
+        </div>
+
+
+        <div class="meal-day-selector">
+
+            <div class="day active">
+                <span>TODAY</span>
+                <strong>08</strong>
+            </div>
+
+            <div class="day">
+                <span>SUN</span>
+                <strong>09</strong>
+            </div>
+
+            <div class="day">
+                <span>MON</span>
+                <strong>10</strong>
+            </div>
+
+            <div class="day">
+                <span>TUE</span>
+                <strong>11</strong>
+            </div>
+
+        </div>
+
+
+        <div class="meal-list">
+
+            <div class="individual-meal-card">
+
+                <div class="individual-meal-icon">
+                    ☀️
+                </div>
+
+                <div class="individual-meal-content">
+
+                    <span class="meal-time">
+                        BREAKFAST
+                    </span>
+
+                    <h3>
+                        Poha & Tea
+                    </h3>
+
+                    <p>
+                        Fresh poha with peanuts and hot chai
+                    </p>
+
+                    <strong>
+                        ₹60
+                    </strong>
+
+                </div>
+
+                <button
+                    class="add-meal-button"
+                    onclick="addToCart('Poha & Tea', 60)">
+
+                    + Add
+
+                </button>
+
+            </div>
+
+
+            <div class="individual-meal-card">
+
+                <div class="individual-meal-icon">
+                    🍱
+                </div>
+
+                <div class="individual-meal-content">
+
+                    <span class="meal-time">
+                        LUNCH
+                    </span>
+
+                    <h3>
+                        Dal Rice & Roti
+                    </h3>
+
+                    <p>
+                        Dal, rice, roti and seasonal sabzi
+                    </p>
+
+                    <strong>
+                        ₹90
+                    </strong>
+
+                </div>
+
+                <button
+                    class="add-meal-button"
+                    onclick="addToCart('Dal Rice & Roti', 90)">
+
+                    + Add
+
+                </button>
+
+            </div>
+
+
+            <div class="individual-meal-card">
+
+                <div class="individual-meal-icon">
+                    🌙
+                </div>
+
+                <div class="individual-meal-content">
+
+                    <span class="meal-time">
+                        DINNER
+                    </span>
+
+                    <h3>
+                        Paneer Masala
+                    </h3>
+
+                    <p>
+                        Paneer gravy, roti, rice and salad
+                    </p>
+
+                    <strong>
+                        ₹100
+                    </strong>
+
+                </div>
+
+                <button
+                    class="add-meal-button"
+                    onclick="addToCart('Paneer Masala', 100)">
+
+                    + Add
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-cart">
+
+            <button onclick="showCart()">
+
+                🛒
+
+                <div>
+
+                    <strong>
+                        View Cart
+                    </strong>
+
+                    <small id="floating-cart-count">
+                        0 items
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CART
+    ====================================================== -->
+
+    <div id="cart-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="showMeals()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                YOUR ORDER
+            </p>
+
+            <h1>
+                Your Cart 🛒
+            </h1>
+
+            <p>
+                Your selected meals are waiting.
+            </p>
+
+        </div>
+
+
+        <div id="cart-items"></div>
+
+
+        <div id="empty-cart" class="empty-cart">
+
+            <div class="empty-icon">
+                🛒
+            </div>
+
+            <h2>
+                Nothing here yet
+            </h2>
+
+            <p>
+                Add a meal and it'll show up here.
+            </p>
+
+            <button
+                class="details-button empty-button"
+                onclick="showMeals()">
+
+                Browse Meals →
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="cart-summary"
+            class="cart-summary"
+            style="display:none;">
+
+            <p class="section-label">
+                ORDER SUMMARY
+            </p>
+
+            <div class="summary-row">
+
+                <span>
+                    Meal subtotal
+                </span>
+
+                <strong id="cart-items-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery fee
+                </span>
+
+                <strong>
+                    ₹20
+                </strong>
+
+            </div>
+
+            <div class="summary-line"></div>
+
+            <div class="summary-row total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cart-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <button
+                class="primary-action"
+                onclick="showCheckout()">
+
+                Proceed to Checkout
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CHECKOUT
+    ====================================================== -->
+
+    <div id="checkout-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="showCart()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                CHECKOUT
+            </p>
+
+            <h1>
+                Complete your order
+            </h1>
+
+            <p>
+                Choose how and when you want your meal.
+            </p>
+
+        </div>
+
+
+        <div class="checkout-section">
+
+            <div class="checkout-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        DELIVERY
+                    </p>
+
+                    <h2>
+                        When should we deliver?
+                    </h2>
+
+                </div>
+
+                <span>01</span>
+
+            </div>
+
+
+            <button
+                class="delivery-card selected"
+                id="now-option"
+                onclick="selectDelivery('now')">
+
+                <div class="delivery-icon">
+                    ⚡
+                </div>
+
+                <div class="delivery-content">
+
+                    <strong>
+                        Deliver Now
+                    </strong>
+
+                    <p>
+                        Get it in approximately 15–20 mins
+                    </p>
+
+                </div>
+
+                <div class="selection-circle">
+                    ✓
+                </div>
+
+            </button>
+
+
+            <button
+                class="delivery-card"
+                id="schedule-option"
+                onclick="selectDelivery('schedule')">
+
+                <div class="delivery-icon">
+                    📅
+                </div>
+
+                <div class="delivery-content">
+
+                    <strong>
+                        Schedule Delivery
+                    </strong>
+
+                    <p>
+                        Pick a date and time that works for you
+                    </p>
+
+                </div>
+
+                <div class="selection-circle">
+                    ✓
+                </div>
+
+            </button>
+
+
+            <div
+                id="schedule-box"
+                class="schedule-panel"
+                style="display:none;">
+
+                <strong>
+                    📅 Choose your delivery slot
+                </strong>
+
+                <p>
+                    We'll make sure it's ready for you.
+                </p>
+
+                <label>
+                    Delivery Date
+                </label>
+
+                <input
+                    class="form-input"
+                    type="date"
+                    id="delivery-date">
+
+                <label>
+                    Delivery Time
+                </label>
+
+                <div class="time-slots">
+
+                    <button onclick="selectTime(this)">
+                        8–9 AM
+                    </button>
+
+                    <button onclick="selectTime(this)">
+                        12–1 PM
+                    </button>
+
+                    <button onclick="selectTime(this)">
+                        7–8 PM
+                    </button>
+
+                    <button onclick="selectTime(this)">
+                        8–9 PM
+                    </button>
+
+                </div>
+
+                <input
+                    type="hidden"
+                    id="delivery-time">
+
+            </div>
+
+        </div>
+
+
+        <div class="checkout-section">
+
+            <div class="checkout-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        DELIVERY ADDRESS
+                    </p>
+
+                    <h2>
+                        Where should we send it?
+                    </h2>
+
+                </div>
+
+                <span>02</span>
+
+            </div>
+
+
+            <div class="address-card">
+
+                <div class="address-icon">
+                    ⌖
+                </div>
+
+                <div>
+
+                    <strong>
+                        MIT-WPU Hostel
+                    </strong>
+
+                    <p>
+                        Kothrud, Pune
+                    </p>
+
+                </div>
+
+                <button>
+                    Change
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="checkout-section">
+
+            <div class="checkout-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        PAYMENT
+                    </p>
+
+                    <h2>
+                        Payment method
+                    </h2>
+
+                </div>
+
+                <span>03</span>
+
+            </div>
+
+
+            <div class="payment-card-small">
+
+                <div class="upi-icon">
+                    U
+                </div>
+
+                <div>
+
+                    <strong>
+                        UPI
+                    </strong>
+
+                    <p>
+                        Google Pay • PhonePe • Paytm
+                    </p>
+
+                </div>
+
+                <span class="selected-text">
+                    ✓ Selected
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="checkout-bottom">
+
+            <div>
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="checkout-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <button
+                class="primary-action"
+                onclick="placeOrder()">
+
+                Place Order →
+                
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ORDER SUCCESS
+    ====================================================== -->
+
+    <div id="order-success-page" class="page" style="display:none;">
+
+        <div class="success-container">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <p class="section-label">
+                ORDER CONFIRMED
+            </p>
+
+            <h1>
+                You're all set! 🎉
+            </h1>
+
+            <p>
+                Your meal has been successfully ordered.
+            </p>
+
+
+            <div class="success-card">
+
+                <div class="success-mess">
+
+                    <div class="small-food-icon">
+                        🍛
+                    </div>
+
+                    <div>
+
+                        <span>
+                            FROM
+                        </span>
+
+                        <h2>
+                            Maa's Kitchen
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="success-details">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <strong id="success-delivery">
+                        Now • 15–20 mins
+                    </strong>
+
+                </div>
+
+
+                <div class="success-details">
+
+                    <span>
+                        Amount
+                    </span>
+
+                    <strong id="success-amount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="success-details">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong class="success-status">
+                        ✓ Confirmed
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-action"
+                onclick="goHome()">
+
+                Back to Home
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MONTHLY SUBSCRIPTION
+    ====================================================== -->
+
+    <div id="subscription-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="showDetails()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                MAAS KITCHEN
+            </p>
+
+            <h1>
+                Monthly Plan
+            </h1>
+
+            <p>
+                One plan. Three meals. Zero daily hassle.
+            </p>
+
+        </div>
+
+
+        <div class="subscription-card">
+
+            <div class="subscription-top">
+
+                <div>
+
+                    <p class="section-label">
+                        STUDENT PLAN
+                    </p>
+
+                    <h2>
+                        ₹2,500
+                        <span>/month</span>
+                    </h2>
+
+                </div>
+
+                <div class="popular-tag">
+                    POPULAR
+                </div>
+
+            </div>
+
+
+            <p class="subscription-description">
+                Your everyday meals sorted for the entire month.
+            </p>
+
+
+            <div class="subscription-feature">
+                <span>✓</span>
+                Breakfast every day
+            </div>
+
+            <div class="subscription-feature">
+                <span>✓</span>
+                Lunch every day
+            </div>
+
+            <div class="subscription-feature">
+                <span>✓</span>
+                Dinner every day
+            </div>
+
+            <div class="subscription-feature">
+                <span>✓</span>
+                Pause anytime up to 7 days
+            </div>
+
+        </div>
+
+
+        <div class="payment-summary">
+
+            <p class="section-label">
+                PAYMENT SUMMARY
+            </p>
+
+            <div class="payment-row">
+
+                <span>
+                    Monthly plan
+                </span>
+
+                <strong>
+                    ₹2,500
+                </strong>
+
+            </div>
+
+            <div class="payment-row">
+
+                <span>
+                    Platform fee
+                </span>
+
+                <strong>
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="summary-line"></div>
+
+            <div class="payment-row total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ₹2,500
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="subscribe-container">
+
+            <button
+                class="primary-action"
+                onclick="showPayment()">
+
+                Pay ₹2,500 & Subscribe
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PAYMENT
+    ====================================================== -->
+
+    <div id="payment-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="showSubscription()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                SECURE PAYMENT
+            </p>
+
+            <h1>
+                Complete payment
+            </h1>
+
+            <p>
+                This is a demo payment for the prototype.
+            </p>
+
+        </div>
+
+
+        <div class="payment-methods">
+
+            <h2>
+                Payment Method
+            </h2>
+
+
+            <div class="payment-method active">
+
+                <div class="method-icon">
+                    U
+                </div>
+
+                <div>
+
+                    <strong>
+                        UPI
+                    </strong>
+
+                    <p>
+                        Google Pay • PhonePe • Paytm
+                    </p>
+
+                </div>
+
+                <span>✓</span>
+
+            </div>
+
+
+            <div class="payment-method">
+
+                <div class="method-icon">
+                    💳
+                </div>
+
+                <div>
+
+                    <strong>
+                        Card
+                    </strong>
+
+                    <p>
+                        Credit / Debit Card
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="demo-payment">
+
+            <span>
+                DEMO PAYMENT
+            </span>
+
+            <h2>
+                ₹2,500
+            </h2>
+
+            <p>
+                No real money will be charged.
+            </p>
+
+        </div>
+
+
+        <div class="subscribe-container">
+
+            <button
+                class="primary-action"
+                onclick="paymentSuccess()">
+
+                Confirm Payment
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SUBSCRIPTION SUCCESS
+    ====================================================== -->
+
+    <div id="success-page" class="page" style="display:none;">
+
+        <div class="success-container">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <p class="section-label">
+                PAYMENT SUCCESSFUL
+            </p>
+
+            <h1>
+                Welcome to MessMate! 🎉
+            </h1>
+
+            <p>
+                Your monthly subscription is now active.
+            </p>
+
+
+            <div class="success-card">
+
+                <div class="success-mess">
+
+                    <div class="small-food-icon">
+                        🍛
+                    </div>
+
+                    <div>
+
+                        <span>
+                            SUBSCRIBED TO
+                        </span>
+
+                        <h2>
+                            Maa's Kitchen
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="success-details">
+
+                    <span>
+                        Plan
+                    </span>
+
+                    <strong>
+                        Monthly
+                    </strong>
+
+                </div>
+
+
+                <div class="success-details">
+
+                    <span>
+                        Amount
+                    </span>
+
+                    <strong>
+                        ₹2,500
+                    </strong>
+
+                </div>
+
+
+                <div class="success-details">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong class="success-status">
+                        ✓ Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-action"
+                onclick="showMyPlan()">
+
+                View My Plan
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MY PLAN
+    ====================================================== -->
+
+    <div id="my-plan-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                YOUR ACCOUNT
+            </p>
+
+            <h1>
+                My Plan
+            </h1>
+
+            <p>
+                Manage your current mess subscription.
+            </p>
+
+        </div>
+
+
+        <div class="active-plan-card">
+
+            <div class="active-badge">
+                ● ACTIVE SUBSCRIPTION
+            </div>
+
+
+            <div class="plan-mess">
+
+                <div class="small-food-icon">
+                    🍛
+                </div>
+
+                <div>
+
+                    <h2>
+                        Maa's Kitchen
+                    </h2>
+
+                    <p>
+                        ⌖ 0.8 km from MIT-WPU
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="active-plan-price">
+
+                ₹2,500
+                <span>/ month</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="my-plan-section">
+
+            <div class="section-header inner">
+
+                <div>
+
+                    <p class="section-label">
+                        OVERVIEW
+                    </p>
+
+                    <h2>
+                        Current Subscription
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="plan-details">
+
+                <div class="plan-detail-row">
+
+                    <span>Plan</span>
+
+                    <strong>Monthly</strong>
+
+                </div>
+
+                <div class="plan-detail-row">
+
+                    <span>Status</span>
+
+                    <strong class="success-status">
+                        ✓ Active
+                    </strong>
+
+                </div>
+
+                <div class="plan-detail-row">
+
+                    <span>Meals</span>
+
+                    <strong>
+                        3 / day
+                    </strong>
+
+                </div>
+
+                <div class="plan-detail-row">
+
+                    <span>Next billing</span>
+
+                    <strong>
+                        08 Sep
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="pause-card">
+
+            <div class="pause-icon">
+                ⏸
+            </div>
+
+            <div class="pause-content">
+
+                <h3>
+                    Going away for a few days?
+                </h3>
+
+                <p>
+                    Pause your subscription for up to
+                    <strong>7 days</strong>.
+                </p>
+
+            </div>
+
+            <button onclick="showPause()">
+                Pause
+            </button>
+
+        </div>
+
+
+        <div class="my-plan-actions">
+
+            <button
+                class="secondary-button"
+                onclick="contactMess()">
+
+                ☎ Contact Mess
+
+            </button>
+
+            <button
+                class="secondary-button"
+                onclick="manageSubscription()">
+
+                ⚙ Manage Subscription
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PAUSE
+    ====================================================== -->
+
+    <div id="pause-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="showMyPlan()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                SUBSCRIPTION
+            </p>
+
+            <h1>
+                Take a break
+            </h1>
+
+            <p>
+                Your plan will automatically resume afterwards.
+            </p>
+
+        </div>
+
+
+        <div class="pause-info-card">
+
+            <div class="pause-big-icon">
+                ⏸️
+            </div>
+
+            <h2>
+                Pause your subscription
+            </h2>
+
+            <p>
+                Choose how long you'd like to pause your
+                meals. Maximum pause duration is
+                <strong>7 days</strong>.
+            </p>
+
+        </div>
+
+
+        <div class="pause-selection-card">
+
+            <p class="section-label">
+                SELECT DURATION
+            </p>
+
+            <div class="pause-options">
+
+                <button onclick="selectPause(1)">
+                    <strong>1</strong>
+                    <span>Day</span>
+                </button>
+
+                <button onclick="selectPause(3)">
+                    <strong>3</strong>
+                    <span>Days</span>
+                </button>
+
+                <button onclick="selectPause(5)">
+                    <strong>5</strong>
+                    <span>Days</span>
+                </button>
+
+                <button onclick="selectPause(7)">
+                    <strong>7</strong>
+                    <span>Days</span>
+                </button>
+
+            </div>
+
+
+            <div id="pause-selection" class="pause-selection">
+                Select a duration above.
+            </div>
+
+        </div>
+
+
+        <div class="subscribe-container">
+
+            <button
+                class="primary-action"
+                onclick="confirmPause()">
+
+                Confirm Pause
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         COMPARE
+    ====================================================== -->
+
+    <div id="compare-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                COMPARE
+            </p>
+
+            <h1>
+                Find your best fit
+            </h1>
+
+            <p>
+                Compare messes before you decide.
+            </p>
+
+        </div>
+
+
+        <div class="compare-card">
+
+            <div class="compare-header">
+
+                <div class="compare-icon">
+                    🍛
+                </div>
+
+                <div>
+
+                    <h3>
+                        Maa's Kitchen
+                    </h3>
+
+                    <span>
+                        ★ 4.6 • 0.8 km
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="compare-row">
+
+                <span>Monthly</span>
+
+                <strong>₹2,500</strong>
+
+            </div>
+
+            <div class="compare-row">
+
+                <span>Meals</span>
+
+                <strong>3 / day</strong>
+
+            </div>
+
+            <div class="compare-row">
+
+                <span>Hygiene</span>
+
+                <strong>4.8 / 5</strong>
+
+            </div>
+
+
+            <button
+                class="order-button full"
+                onclick="showDetails()">
+
+                View Maa's Kitchen →
+
+            </button>
+
+        </div>
+
+
+        <div class="compare-card">
+
+            <div class="compare-header">
+
+                <div class="compare-icon">
+                    🥘
+                </div>
+
+                <div>
+
+                    <h3>
+                        Student Rasoi
+                    </h3>
+
+                    <span>
+                        ★ 4.3 • 1.2 km
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="compare-row">
+
+                <span>Monthly</span>
+
+                <strong>₹2,200</strong>
+
+            </div>
+
+            <div class="compare-row">
+
+                <span>Meals</span>
+
+                <strong>3 / day</strong>
+
+            </div>
+
+            <div class="compare-row">
+
+                <span>Hygiene</span>
+
+                <strong>4.5 / 5</strong>
+
+            </div>
+
+
+            <button
+                class="order-button full"
+                onclick="showDetails()">
+
+                View Student Rasoi →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FLEXI WALLET
+    ====================================================== -->
+
+    <div id="flexi-wallet-page" class="page" style="display:none;">
+
+        <div class="page-header">
+
+            <button
+                class="back-button"
+                onclick="goHome()">
+
+                ← Back
+
+            </button>
+
+            <p class="section-label">
+                FLEXIBLE SUBSCRIPTION
+            </p>
+
+            <h1>
+                Flexi Wallet
+            </h1>
+
+            <p>
+                Prepay once. Choose your mess every day.
+            </p>
+
+        </div>
+
+
+        <!-- WALLET -->
+
+        <div class="flex-wallet-card">
+
+            <div class="flex-wallet-top">
+
+                <div>
+
+                    <span>
+                        AVAILABLE BALANCE
+                    </span>
+
+                    <h2>
+                        ₹<span id="flexWalletBalance">0</span>
+                    </h2>
+
+                </div>
+
+                <div class="wallet-symbol">
+                    💳
+                </div>
+
+            </div>
+
+
+            <div class="wallet-progress">
+
+                <div
+                    id="flexWalletProgress"
+                    style="width:0%;">
+                </div>
+
+            </div>
+
+
+            <p id="flexWalletMessage">
+                Add money to start using Flexi Wallet.
+            </p>
+
+        </div>
+
+
+        <!-- ADD MONEY -->
+
+        <div class="flex-section">
+
+            <p class="section-label">
+                ADD MONEY
+            </p>
+
+            <h2>
+                Top up your wallet
+            </h2>
+
+            <p>
+                Add money upfront and use your balance
+                for meals across participating messes.
+            </p>
+
+
+            <div class="wallet-amounts">
+
+                <button onclick="addFlexMoney(500)">
+                    ₹500
+                </button>
+
+                <button onclick="addFlexMoney(1000)">
+                    ₹1,000
+                </button>
+
+                <button onclick="addFlexMoney(2000)">
+                    ₹2,000
+                </button>
+
+            </div>
+
+
+            <div class="custom-wallet-input">
+
+                <input
+                    type="number"
+                    id="customFlexAmount"
+                    placeholder="Enter custom amount">
+
+                <button onclick="addCustomFlexMoney()">
+                    Add
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPLANATION -->
+
+        <div class="flex-section">
+
+            <div class="flex-info-box">
+
+                <span>
+                    💡
+                </span>
+
+                <div>
+
+                    <strong>
+                        Why Flexi?
+                    </strong>
+
+                    <p>
+                        Unlike a traditional monthly subscription,
+                        you're not locked into one mess. Pick the
+                        mess that suits you each day.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT CHOICE -->
+
+        <div
+            id="flexCurrentSelection"
+            class="flex-current-selection"
+            style="display:none;">
+
+            <p class="section-label">
+                TODAY'S MEAL
+            </p>
+
+            <div class="current-selection-row">
+
+                <div
+                    id="flexSelectedIcon"
+                    class="flex-selected-icon">
+                    🍛
+                </div>
+
+                <div>
+
+                    <span>
+                        SELECTED MESS
+                    </span>
+
+                    <h3 id="flexSelectedMess">
+                        Maa's Kitchen
+                    </h3>
+
+                    <p id="flexSelectedPrice">
+                        ₹90 deducted from wallet
+                    </p>
+
+                </div>
+
+                <span class="flex-confirmed">
+                    ✓ CONFIRMED
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CHOOSE MESS -->
+
+        <div class="flex-section">
+
+            <p class="section-label">
+                CHOOSE TODAY'S MESS
+            </p>
+
+            <h2>
+                Where do you want to eat?
+            </h2>
+
+            <p>
+                You can choose a different mess tomorrow.
+            </p>
+
+
+            <div class="flex-mess-card">
+
+                <div class="flex-mess-info">
+
+                    <div>
+
+                        <div class="flex-mess-icon">
+                            🍛
+                        </div>
+
+                        <h3>
+                            Maa's Kitchen
+                        </h3>
+
+                        <p>
+                            Home-style • Vegetarian
+                        </p>
+
+                        <span>
+                            ★ 4.6 • 0.8 km
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        ₹90
+                        <small>/ meal</small>
+                    </strong>
+
+                </div>
+
+
+                <button
+                    onclick="chooseFlexMess('Maa’s Kitchen', 90, '🍛')">
+
+                    Choose for Today →
+
+                </button>
+
+            </div>
+
+
+            <div class="flex-mess-card">
+
+                <div class="flex-mess-info">
+
+                    <div>
+
+                        <div class="flex-mess-icon">
+                            🥘
+                        </div>
+
+                        <h3>
+                            Student Rasoi
+                        </h3>
+
+                        <p>
+                            North Indian • Veg
+                        </p>
+
+                        <span>
+                            ★ 4.3 • 1.2 km
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        ₹80
+                        <small>/ meal</small>
+                    </strong>
+
+                </div>
+
+
+                <button
+                    onclick="chooseFlexMess('Student Rasoi', 80, '🥘')">
+
+                    Choose for Today →
+
+                </button>
+
+            </div>
+
+
+            <div class="flex-mess-card">
+
+                <div class="flex-mess-info">
+
+                    <div>
+
+                        <div class="flex-mess-icon">
+                            🥗
+                        </div>
+
+                        <h3>
+                            Green Bowl
+                        </h3>
+
+                        <p>
+                            Healthy • Vegetarian
+                        </p>
+
+                        <span>
+                            ★ 4.5 • 1.5 km
+                        </span>
+
+                    </div>
+
+                    <strong>
+                        ₹100
+                        <small>/ meal</small>
+                    </strong>
+
+                </div>
+
+
+                <button
+                    onclick="chooseFlexMess('Green Bowl', 100, '🥗')">
+
+                    Choose for Today →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOW IT WORKS -->
+
+        <div class="flex-how">
+
+            <p class="section-label">
+                HOW IT WORKS
+            </p>
+
+            <h2>
+                Freedom without the <span>commitment.</span>
+            </h2>
+
+
+            <div class="flex-step">
+
+                <strong>01</strong>
+
+                <div>
+
+                    <h3>
+                        Add money
+                    </h3>
+
+                    <p>
+                        Put money into your MessMate wallet
+                        upfront.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="flex-step">
+
+                <strong>02</strong>
+
+                <div>
+
+                    <h3>
+                        Pick your mess
+                    </h3>
+
+                    <p>
+                        Choose from participating messes
+                        whenever you want.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="flex-step">
+
+                <strong>03</strong>
+
+                <div>
+
+                    <h3>
+                        Switch tomorrow
+                    </h3>
+
+                    <p>
+                        Don't like today's mess? Choose
+                        another one tomorrow.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTTOM NAV
+    ====================================================== -->
+
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-item active"
+            onclick="goHome()">
+
+            <span>⌂</span>
+
+            Home
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            onclick="showCompare()">
+
+            <span>⇄</span>
+
+            Compare
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            onclick="showFlexiWallet()">
+
+            <span>💳</span>
+
+            Flexi
+
+        </button>
+
+
+        <button
+            class="nav-item"
+            onclick="showMyPlan()">
+
+            <span>♙</span>
+
+            My Plan
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
